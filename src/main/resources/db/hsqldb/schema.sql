@@ -8,6 +8,7 @@ DROP TABLE types IF EXISTS;
 DROP TABLE owners IF EXISTS;
 DROP TABLE donations IF EXISTS;
 DROP TABLE causes IF EXISTS;
+DROP TABLE ejercicios IF EXISTS;
 
 
 CREATE TABLE vets (
@@ -89,3 +90,13 @@ CREATE TABLE donations (
 );
 ALTER TABLE donations ADD CONSTRAINT fk_donations_causes FOREIGN KEY (cause_id) REFERENCES causes (id);
 CREATE INDEX donations_causes_id ON donations (cause_id);
+
+CREATE TABLE ejercicios (
+  id	INTEGER IDENTITY PRIMARY KEY,
+  nombre VARCHAR(255),
+  tipo VARCHAR(255),
+  material VARCHAR(255),
+  objetivo_tecnico VARCHAR(255),
+  objetivo_tactico VARCHAR(255),
+  descripcion VARCHAR(255)
+)
